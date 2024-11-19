@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           theme: light(),
           debugShowCheckedModeBanner: false,
           getPages: RoutePages.routes,
-          initialRoute: RouteNames.registrationScreen,
+          initialRoute: RouteNames.splashScreen,
           initialBinding: ControllerBindings(),
         );
       },
