@@ -30,7 +30,7 @@ class _WeeklyDateState extends State<WeeklyDate> {
       body: SafeArea(
         child: Calendar(
           startOnMonday: true,
-          weekDays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          weekDays: const ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
           eventsList: _eventList,
           selectedColor: AppColors.primaryColor,
           selectedTodayColor: AppColors.primaryColor,
@@ -55,8 +55,8 @@ class _WeeklyDateState extends State<WeeklyDate> {
           showEventListViewIcon: false,
           eventCellBuilder: (context, event, start, end) {
             // Split description to get BookingCard data
-            final details = event.description?.split('|');
-            if (details != null && details.length == 7) {
+            final details = event.description.split('|');
+            if (details.length == 7) {
               return BookingCard(
                 title: details[0],
                 imageUrl: AppImages.shower,

@@ -3,9 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shower_share/utils/app_colors.dart';
 import 'package:shower_share/utils/app_icons.dart';
 import 'package:shower_share/views/guest/Message/message_screen.dart';
-import 'package:shower_share/views/guest/home/home_screen.dart';
 import 'package:shower_share/views/guest/profile/profile_screen.dart';
-import 'package:shower_share/views/guest/shower/shower_screen.dart';
+import 'package:shower_share/views/host/booking%20list/booking_list_screen.dart';
 import 'package:shower_share/views/host/home/host_home_screen.dart';
 
 class HostCustomNavBar extends StatefulWidget {
@@ -20,10 +19,10 @@ class _HostCustomNavBarState extends State<HostCustomNavBar> {
 
   // List of screens for navigation
   final List<Widget> _screens = [
-    HostHomeScreen(),
-    const ShowerScreen(),
+    const HostHomeScreen(),
+    const BookingListScreen(),
     MessageScreen(),
-    ProfileScreen(),
+    ProfileScreen(isHost: true,),
   ];
 
   void _onItemTapped(int index) {

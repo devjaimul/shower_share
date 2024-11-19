@@ -40,4 +40,7 @@ class RouteNames{
 //host
   static const String registrationScreen='/RegistrationScreen';
   static const String hostCustomNavBar='/HostCustomNavBar';
+  static const String showerEditScreen='/ShowerEditScreen';
+  static const String walletScreen='/WalletScreen';
+  static const String reviewScreen='/ReviewScreen';
 }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:shower_share/global_widgets/custom_text_button.dart';
+import 'package:shower_share/routes/route_name.dart';
 import 'package:shower_share/utils/app_colors.dart';
 import 'package:shower_share/global_widgets/custom_text.dart';
 import 'package:shower_share/global_widgets/time_picker_box.dart';
 import 'package:shower_share/utils/app_images.dart';
+import 'package:shower_share/views/host/home/shower_edit_screen.dart';
 
 class HostCustomDetails extends StatefulWidget {
 
@@ -163,9 +166,14 @@ class _HostCustomDetailsState extends State<HostCustomDetails> {
           ],
         ),
         SizedBox(height: 20.h),
-        CustomTextButton(text: 'Edit', onTap: (){},color: AppColors.primaryColor,),
+        CustomTextButton(text: 'Edit', onTap: (){
+          Get.to(ShowerEditScreen(isEdit: true,));
+        },color: AppColors.primaryColor,),
         SizedBox(height: 8.h),
-        CustomTextButton(text: 'See Review', onTap: (){},),
+        CustomTextButton(text: 'See Review', onTap: (){
+          Get.toNamed(RouteNames.reviewScreen);
+        },),
+
       ],
     );
   }

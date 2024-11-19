@@ -32,7 +32,9 @@ class HostHomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed(RouteNames.supportScreen);
+            },
             icon: Image.asset(
               AppIcons.support,
               height: 20.h,
@@ -54,9 +56,8 @@ class HostHomeScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 16.w,vertical: 10.h),
-          child: const HostCustomDetails(
-           ),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+          child: const HostCustomDetails(),
         ),
       ),
     );

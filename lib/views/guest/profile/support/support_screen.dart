@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:shower_share/global_widgets/app_logo.dart';
 import 'package:shower_share/global_widgets/custom_text.dart';
+import 'package:shower_share/routes/route_name.dart';
 import 'package:shower_share/utils/app_colors.dart';
 
 class SupportScreen extends StatelessWidget {
@@ -55,7 +57,7 @@ class SupportScreen extends StatelessWidget {
                       // Click here link
                       GestureDetector(
                         onTap: () {
-                          // Add "Click here" action logic here
+                          Get.toNamed(RouteNames.messageChatScreen);
                         },
                         child: const CustomTextTwo(text: 'Click Here',color: AppColors.primaryColor,)
                       ),

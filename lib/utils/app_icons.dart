@@ -22,6 +22,7 @@ class AppIcons {
   static const String postFill = "$path/post_fill.png";
   static const String booking = "$path/booking.png";
   static const String bookingFill = "$path/booking_fil.png";
+  static const String wallet = "$path/wallet.png";
 
 
   static const String navChat = "$nav/chat.png";

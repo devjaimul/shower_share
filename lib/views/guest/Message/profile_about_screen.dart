@@ -79,7 +79,8 @@ class ProfileAboutScreen extends StatelessWidget {
                         },
                         onConfirm: () {
                           // Handle Log Out Action
-                          Get.offAllNamed(RouteNames.customNavBar);
+                          Get.back();
+                          Get.back();
                         },
                       ),
                     );

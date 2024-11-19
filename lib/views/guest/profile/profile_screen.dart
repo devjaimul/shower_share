@@ -11,7 +11,8 @@ import 'package:shower_share/global_widgets/custom_text_button.dart';
 import 'package:shower_share/global_widgets/dialog.dart';
 
 class ProfileScreen extends StatelessWidget {
-  ProfileScreen({super.key});
+  final bool? isHost;
+  ProfileScreen({super.key, this.isHost});
 
   final ProfileController profileController = Get.put(ProfileController());
 
@@ -108,23 +109,30 @@ class ProfileScreen extends StatelessWidget {
                         Get.toNamed(RouteNames.profileDetailsScreen);
                       },
                     ),
+                    isHost == true
+                        ? _buildProfileOption(
+                      iconPath: AppIcons.wallet,
+                      title: "Wallet",
+                      onTap: () {
+                        Get.toNamed(RouteNames.walletScreen);
+                      },
+                    )
+                        : null,
                     _buildProfileOption(
                       iconPath: AppIcons.switching,
-                      title: "Switch to host",
+                      title:isHost==true? "Switch to Guest":"Switch to Host",
                       onTap: () {
                         showDialog(
                           context: context,
                           builder: (context) => CustomDialog(
-                            title: "Are You Sure want to be a host ?",
+                            title: "Are You Sure want to be a host?",
                             cancelButtonText: 'No',
                             confirmButtonText: 'Yes',
                             onCancel: () {
-                              // Handle Cancel Button Action
                               Get.back();
                             },
                             onConfirm: () {
-                              // Handle Log Out Action
-                              Get.offAllNamed(RouteNames.signInScreen);
+                              Get.offAllNamed(RouteNames.roleScreen);
                             },
                           ),
                         );
@@ -144,9 +152,9 @@ class ProfileScreen extends StatelessWidget {
                         Get.toNamed(RouteNames.supportScreen);
                       },
                     ),
-
-                  ],
+                  ].whereType<Widget>().toList(),
                 ),
+
                 SizedBox(height: 20.h),
 
                 // Log Out Button
@@ -166,7 +174,7 @@ class ProfileScreen extends StatelessWidget {
                         },
                         onConfirm: () {
                           // Handle Log Out Action
-                          Get.offAllNamed(RouteNames.signInScreen);
+                          Get.offAllNamed(RouteNames.roleScreen);
                         },
                       ),
                     );

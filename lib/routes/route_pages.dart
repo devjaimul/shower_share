@@ -23,7 +23,10 @@ import 'package:shower_share/views/guest/profile/setting/setting_screen.dart';
 import 'package:shower_share/views/guest/profile/setting/terms_screen.dart';
 import 'package:shower_share/views/guest/profile/support/support_screen.dart';
 import 'package:shower_share/views/host/custom_nav_bar/host_custom_nav_bar.dart';
+import 'package:shower_share/views/host/home/review_screen.dart';
+import 'package:shower_share/views/host/home/shower_edit_screen.dart';
 import 'package:shower_share/views/host/registration/registration_screen.dart';
+import 'package:shower_share/views/host/wallet/wallet_screen.dart';
 import 'package:shower_share/views/splash/onboarding_screen.dart';
 import 'package:shower_share/views/splash/role_screen.dart';
 import 'package:shower_share/views/splash/select_screen.dart';
@@ -65,7 +68,10 @@ class RoutePages {
 
     //host
      GetPage(name: RouteNames.registrationScreen, page: () =>   RegistrationScreen()),
-     GetPage(name: RouteNames.hostCustomNavBar, page: () =>   HostCustomNavBar()),
+     GetPage(name: RouteNames.hostCustomNavBar, page: () =>   const HostCustomNavBar()),
+     GetPage(name: RouteNames.showerEditScreen, page: () =>   ShowerEditScreen()),
+     GetPage(name: RouteNames.walletScreen, page: () =>   const WalletScreen()),
+     GetPage(name: RouteNames.reviewScreen, page: () =>   const ReviewScreen()),
 
   ];
 }
