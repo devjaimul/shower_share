@@ -8,10 +8,12 @@ import 'package:shower_share/utils/app_constant.dart';
 import 'package:shower_share/utils/app_icons.dart';
 import 'package:shower_share/global_widgets/custom_text.dart';
 import 'package:shower_share/global_widgets/custom_text_button.dart';
+import 'package:shower_share/views/host/registration/registration_screen.dart';
 import 'package:shower_share/views/widgets/custom_text_field.dart';
 
 class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+  final bool? isHost;
+  const SignUpScreen({super.key, this.isHost});
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
@@ -21,7 +23,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController fullNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isTermsAccepted = false;
 
@@ -41,7 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 80.h),
                   Center(
                     child: Padding(
-                      padding:  EdgeInsets.symmetric(horizontal: 50.w),
+                      padding: EdgeInsets.symmetric(horizontal: 50.w),
                       child: CustomTextOne(
                         text: 'Create your Account.',
                         color: AppColors.primaryColor,
@@ -68,7 +71,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   CustomTextField(
                     controller: fullNameController,
                     hintText: 'Full Name',
-                    prefixIcon:  Padding(
+                    prefixIcon: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.w),
                       child: Image(
                         image: const AssetImage(AppIcons.person),
@@ -96,7 +99,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     hintText: 'Email Address',
                     prefixIcon: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.w),
-                      child: Image(image: const AssetImage(AppIcons.email), height: 15.h),
+                      child: Image(
+                          image: const AssetImage(AppIcons.email),
+                          height: 15.h),
                     ),
                     isEmail: true,
                     keyboardType: TextInputType.emailAddress,
@@ -123,7 +128,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     hintText: 'Password',
                     prefixIcon: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.w),
-                      child: Image(image: const AssetImage(AppIcons.password), height: 15.h),
+                      child: Image(
+                          image: const AssetImage(AppIcons.password),
+                          height: 15.h),
                     ),
                     isPassword: true,
                     validator: (value) {
@@ -149,7 +156,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     hintText: 'Confirm Password',
                     prefixIcon: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.w),
-                      child: Image(image: const AssetImage(AppIcons.password), height: 15.h),
+                      child: Image(
+                          image: const AssetImage(AppIcons.password),
+                          height: 15.h),
                     ),
                     isPassword: true,
                     validator: (value) {
@@ -179,7 +188,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         child: RichText(
                           text: TextSpan(
                             text: 'I have read & agreed to Shower share ',
-                            style: TextStyle(color: AppColors.textColor, fontSize: 12.sp),
+                            style: TextStyle(
+                                color: AppColors.textColor, fontSize: 12.sp),
                             children: [
                               TextSpan(
                                 text: 'Terms & Conditions',
@@ -204,10 +214,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onTap: () {
                       if (formKey.currentState?.validate() ?? false) {
                         if (isTermsAccepted) {
-Get.offAllNamed(RouteNames.customNavBar);
+
+                          if(widget.isHost==true){
+                            //host navbar
+                            Get.to(RegistrationScreen());
+                          }
+                          else{
+                            Get.offAllNamed(RouteNames.customNavBar);
+                          }
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text("Please accept the terms and conditions")),
+                            const SnackBar(
+                                content: Text(
+                                    "Please accept the terms and conditions")),
                           );
                         }
                       }
@@ -240,6 +259,7 @@ Get.offAllNamed(RouteNames.customNavBar);
       ),
     );
   }
+
   @override
   void dispose() {
     // TODO: implement dispose

@@ -14,9 +14,14 @@ class AppIcons {
   static const String logOut = "$path/logOut.png";
   static const String search = "$path/search.png";
   static const String notification = "$path/notification.png";
+  static const String notifications2 = "$path/notifications2.png";
   static const String verify = "$path/verify.png";
   static const String chat = "$path/chat.png";
   static const String filter = "$path/filter.png";
+  static const String post = "$path/post.png";
+  static const String postFill = "$path/post_fill.png";
+  static const String booking = "$path/booking.png";
+  static const String bookingFill = "$path/booking_fil.png";
 
 
   static const String navChat = "$nav/chat.png";

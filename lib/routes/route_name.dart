@@ -37,5 +37,7 @@ class RouteNames{
 
   static const String notificationScreen='/NotificationScreen';
 
-
+//host
+  static const String registrationScreen='/RegistrationScreen';
+  static const String hostCustomNavBar='/HostCustomNavBar';
 }

@@ -19,7 +19,7 @@ class CustomTextOne extends StatelessWidget {
         this.textHeight,
         this.fontWeight = FontWeight.w400,
         this.color,
-        this.text = ""});
+       required this.text });
 
   final double left;
   final TextOverflow? textOverflow;

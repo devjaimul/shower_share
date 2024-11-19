@@ -12,8 +12,10 @@ class TimePickerBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sizeH = MediaQuery.of(context).size.height;
+    final sizeW = MediaQuery.of(context).size.width;
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 10.w),
+      padding: EdgeInsets.symmetric(vertical: sizeH*.01,horizontal: sizeW*.014),
 
       decoration: BoxDecoration(
         color: AppColors.buttonSecondColor,
@@ -24,11 +26,11 @@ class TimePickerBox extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-             Icon(icon??Icons.access_time, color: AppColors.primaryColor),
-            SizedBox(width: 5.w,),
+             Icon(icon??Icons.access_time, color: AppColors.primaryColor,size: sizeH*.02,),
+            SizedBox(width: sizeW*.02,),
             CustomTextTwo(
               text: text,
-              fontSize: 14.sp,
+              fontSize: sizeH*.014,
               color:color?? AppColors.blackColor,
             ),
           ],

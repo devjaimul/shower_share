@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shower_share/global_widgets/shower_card.dart';
 import 'package:shower_share/global_widgets/weekly_date.dart';
+import 'package:shower_share/routes/route_name.dart';
 import 'package:shower_share/utils/app_colors.dart';
 import 'package:shower_share/utils/app_icons.dart';
 import 'package:shower_share/utils/app_images.dart';
@@ -33,6 +34,7 @@ class HomeScreen extends StatelessWidget {
                 text: "Daniel Martinez",
                 maxLine: 1,
                 fontSize: 16.sp,
+                textOverflow: TextOverflow.ellipsis,
               )
             ],
           ),
@@ -48,7 +50,9 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(RouteNames.notificationScreen);
+              },
               icon: Image.asset(
                 AppIcons.notification,
                 height: 20.h,

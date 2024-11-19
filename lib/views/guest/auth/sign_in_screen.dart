@@ -7,11 +7,13 @@ import 'package:shower_share/utils/app_icons.dart';
 import 'package:shower_share/utils/app_strings.dart';
 import 'package:shower_share/global_widgets/custom_text.dart';
 import 'package:shower_share/global_widgets/custom_text_button.dart';
+import 'package:shower_share/views/host/custom_nav_bar/host_custom_nav_bar.dart';
 import 'package:shower_share/views/widgets/custom_text_field.dart';
 
 
 class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+  final bool? isHost;
+  const SignInScreen({super.key, this.isHost});
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -132,7 +134,14 @@ class _SignInScreenState extends State<SignInScreen> {
                     text: 'Sign In',
                     onTap: () {
                       if (formKey.currentState?.validate() ?? false) {
-                        Get.offAllNamed(RouteNames.customNavBar);
+
+                        if(widget.isHost==true){
+                          //host navbar
+                         Get.offAll(const HostCustomNavBar());
+                        }
+                        else{
+                          Get.offAllNamed(RouteNames.customNavBar);
+                        }
                       }
                     },
                   ),

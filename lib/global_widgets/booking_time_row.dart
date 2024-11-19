@@ -9,6 +9,8 @@ class BookingTimeRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sizeH = MediaQuery.of(context).size.height;
+    final sizeW = MediaQuery.of(context).size.width;
     return Row(
       children: [
         const Expanded(
@@ -17,7 +19,7 @@ class BookingTimeRow extends StatelessWidget {
             color: AppColors.primaryColor,
           ),
         ),
-        SizedBox(width: 30.w, child: CustomTextTwo(text: "to", fontSize: 14.sp)),
+        SizedBox(width: sizeW*.2, child: CustomTextTwo(text: "to", fontSize: sizeH*.014)),
         const Expanded(
           child: TimePickerBox(
             text: '7:00 AM',

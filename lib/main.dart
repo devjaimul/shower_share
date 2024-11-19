@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           theme: light(),
           debugShowCheckedModeBanner: false,
           getPages: RoutePages.routes,
-          initialRoute: RouteNames.customNavBar,
+          initialRoute: RouteNames.registrationScreen,
           initialBinding: ControllerBindings(),
         );
       },

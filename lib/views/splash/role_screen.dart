@@ -7,6 +7,7 @@ import 'package:shower_share/utils/app_colors.dart';
 import 'package:shower_share/utils/app_strings.dart';
 import 'package:shower_share/global_widgets/custom_text.dart';
 import 'package:shower_share/global_widgets/custom_text_button.dart';
+import 'package:shower_share/views/splash/select_screen.dart';
 
 class RoleScreen extends StatelessWidget {
   const RoleScreen({super.key});
@@ -28,7 +29,7 @@ body: SingleChildScrollView(
           SizedBox(height: 40.h,),
           CustomTextButton(text: 'Be a Guest', onTap: (){Get.toNamed(RouteNames.selectScreen);}),
           SizedBox(height: 15.h,),
-          CustomTextButton(text: 'Be a Host', onTap: (){Get.toNamed(RouteNames.selectScreen);},color: AppColors.buttonSecondColor,textColor: AppColors.buttonColor,),
+          CustomTextButton(text: 'Be a Host', onTap: (){Get.to(const SelectScreen(isHost: true,));},color: AppColors.buttonSecondColor,textColor: AppColors.buttonColor,),
         ],
       ),
     ),

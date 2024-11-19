@@ -12,6 +12,7 @@ import 'package:shower_share/views/guest/auth/sign_in_screen.dart';
 import 'package:shower_share/views/guest/auth/sign_up_screen.dart';
 import 'package:shower_share/views/guest/custom_nav_bar/custom_nav_bar.dart';
 import 'package:shower_share/views/guest/home/home_screen.dart';
+import 'package:shower_share/views/guest/notification/notification.dart';
 import 'package:shower_share/views/guest/payment/payment_details.dart';
 import 'package:shower_share/views/guest/profile/profile%20details/profile_details_screen.dart';
 import 'package:shower_share/views/guest/profile/profile%20details/profile_edit_details.dart';
@@ -21,10 +22,12 @@ import 'package:shower_share/views/guest/profile/setting/privacy_policy_screen.d
 import 'package:shower_share/views/guest/profile/setting/setting_screen.dart';
 import 'package:shower_share/views/guest/profile/setting/terms_screen.dart';
 import 'package:shower_share/views/guest/profile/support/support_screen.dart';
-import 'package:shower_share/views/guest/splash/onboarding_screen.dart';
-import 'package:shower_share/views/guest/splash/role_screen.dart';
-import 'package:shower_share/views/guest/splash/select_screen.dart';
-import 'package:shower_share/views/guest/splash/splash_screen.dart';
+import 'package:shower_share/views/host/custom_nav_bar/host_custom_nav_bar.dart';
+import 'package:shower_share/views/host/registration/registration_screen.dart';
+import 'package:shower_share/views/splash/onboarding_screen.dart';
+import 'package:shower_share/views/splash/role_screen.dart';
+import 'package:shower_share/views/splash/select_screen.dart';
+import 'package:shower_share/views/splash/splash_screen.dart';
 
 
 
@@ -56,6 +59,13 @@ class RoutePages {
      GetPage(name: RouteNames.profileAboutScreen, page: () =>  ProfileAboutScreen()),
      GetPage(name: RouteNames.mediaScreen, page: () =>  MediaScreen()),
      GetPage(name: RouteNames.reportScreen, page: () =>  const ReportScreen()),
+     GetPage(name: RouteNames.notificationScreen, page: () =>  const NotificationScreen()),
+
+
+
+    //host
+     GetPage(name: RouteNames.registrationScreen, page: () =>   RegistrationScreen()),
+     GetPage(name: RouteNames.hostCustomNavBar, page: () =>   HostCustomNavBar()),
 
   ];
 }
